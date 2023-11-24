@@ -8,14 +8,14 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/horione"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
+        android:id="@+id/horitwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -30,10 +30,82 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintBottom_toTopOf="@+id/horione"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.607" />
 
+    <TextView
+        android:id="@+id/edtiBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Edit"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/heading"
+        app:layout_constraintEnd_toStartOf="@+id/searchBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/heading"
+        app:layout_constraintTop_toTopOf="@+id/heading"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <ImageButton
+        android:id="@+id/searchBtn"
+        android:layout_width="54dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtiBtn"
+        app:layout_constraintEnd_toStartOf="@+id/versec"
+        app:layout_constraintTop_toTopOf="@+id/edtiBtn"
+        app:layout_constraintVertical_bias="0.588" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/versec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notesview"
+        app:layout_constraintBottom_toTopOf="@+id/horitwo"
+        app:layout_constraintEnd_toStartOf="@+id/versec"
+        app:layout_constraintStart_toStartOf="@+id/verone"
+        app:layout_constraintStart_toTopOf="@+id/horione"
+        app:layout_constraintTop_toTopOf="@+id/horione"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/newpageimg"
+        android:layout_width="24dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/versec"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/verone"
+        app:layout_constraintTop_toBottomOf="@+id/notesview"
+        app:layout_constraintVertical_bias="0.186"
+        app:srcCompat="@drawable/newpageicon" />
+
+    <TextView
+        android:id="@+id/newpagetxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Notes"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="@+id/newpageimg"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toEndOf="@id/newpageimg"
+        app:layout_constraintStart_toStartOf="@+id/newpageimg"
+        tools:layout_editor_absoluteY="704dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
