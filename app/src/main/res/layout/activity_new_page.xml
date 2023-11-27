@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161616"
+    tools:context=".NewPageActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrolview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/titleview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:hint="Input Title"
+                android:paddingStart="5dp"
+                android:textColor="#818181"
+                android:textColorHint="#818181"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Monday, 27 November 2023"
+                android:textColor="@color/txtcolor"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Write it here"
+                android:minHeight="48dp"
+                android:textColor="@color/txtcolor"
+                android:textColorHint="@color/txtcolor" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10533515" />
+
+    <ImageView
+        android:id="@+id/submitimg"
+        android:layout_width="24dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrolview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/check_mark_line_icon" />
+
+    <ImageView
+        android:id="@+id/backimg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrolview"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/back1" />
+
+    <ImageView
+        android:id="@+id/undoimg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="244dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrolview"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toEndOf="@+id/backimg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:srcCompat="@drawable/undo" />
+
+    <ImageView
+        android:id="@+id/redoimg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/undoimg"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/submitimg"
+        app:layout_constraintStart_toEndOf="@+id/undoimg"
+        app:layout_constraintTop_toTopOf="@+id/undoimg"
+        app:srcCompat="@drawable/redo" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
