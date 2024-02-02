@@ -13,11 +13,10 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottomcardview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,35 +24,42 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/titleview"
+                android:id="@+id/titletxt"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints=""
                 android:background="@android:color/transparent"
-                android:hint="Input Title"
+                android:hint="@string/input_title"
+                android:inputType="text"
                 android:paddingStart="5dp"
+                android:paddingEnd="5dp"
                 android:textColor="#818181"
                 android:textColorHint="#818181"
                 android:textSize="34sp"
                 android:textStyle="bold"
-                tools:ignore="TouchTargetSizeCheck" />
+                tools:ignore="TouchTargetSizeCheck,VisualLintTextFieldSize" />
 
             <TextView
+                android:id="@+id/creatingtxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Monday, 27 November 2023"
+                android:text="@string/monday_27_november_2023"
                 android:textColor="@color/txtcolor"
                 android:textSize="16sp" />
 
             <EditText
-                android:id="@+id/content"
+                android:id="@+id/contenttxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="name"
                 android:background="@android:color/transparent"
-                android:hint="Write it here"
+                android:hint="@string/write_it_here"
+                android:inputType="text"
                 android:minHeight="48dp"
                 android:textColor="@color/txtcolor"
-                android:textColorHint="@color/txtcolor" />
+                android:textColorHint="@color/txtcolor"
+                tools:ignore="VisualLintTextFieldSize" />
 
         </LinearLayout>
     </ScrollView>
@@ -74,7 +80,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/check_mark_line_icon" />
+        app:srcCompat="@drawable/check_mark_line_icon"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:importantForAccessibility="no" />
 
     <ImageView
         android:id="@+id/backimg"
@@ -86,30 +94,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/back1" />
+        app:srcCompat="@drawable/back1"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        android:importantForAccessibility="no" />
 
-    <ImageView
-        android:id="@+id/undoimg"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="244dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrolview"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toEndOf="@+id/backimg"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/undo" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomcardview"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:cardBackgroundColor="#252222"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" >
 
-    <ImageView
-        android:id="@+id/redoimg"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/undoimg"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/submitimg"
-        app:layout_constraintStart_toEndOf="@+id/undoimg"
-        app:layout_constraintTop_toTopOf="@+id/undoimg"
-        app:srcCompat="@drawable/redo" />
+        <LinearLayout
+            android:id="@+id/bottomlinaer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/idfontsize"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/fontsizeimg"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/idbold"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/boldimg"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/iditalic"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/italicimg"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/idunderline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/underlineimg"
+                android:importantForAccessibility="no" />
+
+            <ImageView
+                android:id="@+id/idbullet"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                app:srcCompat="@drawable/bulletimg"
+                android:importantForAccessibility="no" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

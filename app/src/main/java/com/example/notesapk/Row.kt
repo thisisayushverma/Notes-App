@@ -4,10 +4,13 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
-data class row (
+@Entity(tableName = "tableone")
+data class Row(
     @PrimaryKey(autoGenerate = true)
-    val notesid:Int,
-    @ColumnInfo(name = "title") val notetiitle:String?,
-    @ColumnInfo(name="content") val notescontent:String?
+    val notedid:Int=0,
+    @ColumnInfo
+    val notetitle:String,
+    @ColumnInfo
+    val notecontent:String
+
 )

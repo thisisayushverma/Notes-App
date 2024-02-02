@@ -3,4 +3,10 @@
     <string name="edit">Edit</string>
     <string name="notes">Notes</string>
     <string name="new_notes">New Notes</string>
+    <string name="hello">Hello</string>
+    <string name="date">date</string>
+    <string name="input_title">Input Title</string>
+    <string name="write_it_here">Write it here</string>
+    <string name="monday_27_november_2023">Monday, 27 November 2023</string>
+    <string name="detele">this will helping in deleting the notes</string>
 </resources>

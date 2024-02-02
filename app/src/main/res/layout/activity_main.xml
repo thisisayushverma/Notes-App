@@ -76,28 +76,29 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/notesview"
+        android:id="@+id/notesrecylcer"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/horitwo"
         app:layout_constraintEnd_toStartOf="@+id/versec"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/verone"
         app:layout_constraintTop_toTopOf="@+id/horione"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/newpageimg"
-        android:layout_width="24dp"
-        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_height="48dp"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/versec"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/verone"
-        app:layout_constraintTop_toBottomOf="@+id/notesview"
+        app:layout_constraintTop_toBottomOf="@+id/notesrecylcer"
         app:layout_constraintVertical_bias="0.186"
         app:srcCompat="@drawable/newpageicon"
-        android:importantForAccessibility="no" />
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/newpagetxt"
@@ -105,7 +106,7 @@
         android:layout_height="wrap_content"
         android:text="@string/new_notes"
         android:textColor="@color/white"
-        android:textSize="8sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/newpageimg"
         app:layout_constraintHorizontal_bias="0.615"
@@ -114,5 +115,17 @@
         app:layout_constraintTop_toBottomOf="@+id/newpageimg"
         app:layout_constraintVertical_bias="0.333"
         tools:ignore="SmallSp" />
+
+    <ImageView
+        android:id="@+id/trashicon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/detele"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/versec"
+        app:layout_constraintStart_toStartOf="@+id/verone"
+        app:layout_constraintTop_toTopOf="@+id/horitwo"
+        app:srcCompat="@drawable/trashicon"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
